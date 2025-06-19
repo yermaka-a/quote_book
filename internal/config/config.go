@@ -19,8 +19,8 @@ func (c config) Port() string {
 }
 
 func MustLoad() Config {
-	return config{
-		port:     ":9435",
+	return &config{
+		port:     "8080",
 		logLevel: "debug",
 	}
 }
