@@ -1,12 +1,12 @@
 package config
 
 type Config interface {
-	Port() int
+	Port() string
 	LogLevel() string
 }
 
 type config struct {
-	port     int
+	port     string
 	logLevel string
 }
 
@@ -14,13 +14,13 @@ func (c config) LogLevel() string {
 	return c.logLevel
 }
 
-func (c config) Port() int {
+func (c config) Port() string {
 	return c.port
 }
 
 func MustLoad() Config {
 	return config{
-		port:     9345,
+		port:     ":9435",
 		logLevel: "debug",
 	}
 }
